@@ -8,7 +8,6 @@ const Paciente = ({ paciente, setPaciente, eliminarPaciente }) => {
       eliminarPaciente(id)
     }
   }
-  
 
   return (
     <div className="mx-5 my-5 bg-white shadow-md px-5 py-10 rounded-xl">
