@@ -34,7 +34,7 @@ const Formulario = ({ pacientes, setPacientes, paciente, setPaciente }) => { //d
     e.preventDefault()
 
     if ([nombre, propietario, email, fecha, sintomas].includes('')) {
-      console.log('Hay al menos un campo vacío')
+      console.log('Empty field')
       setError(true)
       return;
     }
@@ -76,13 +76,13 @@ const Formulario = ({ pacientes, setPacientes, paciente, setPaciente }) => { //d
   return (
     <div className='md:w-1/2 lg:w-2/5 mx-5'>
       <h2 className="font-black text-3xl text-center">
-        Seguimiento Pacientes
+        Patients Follow up
       </h2>
 
       <p className="mt-5 text-center text-lg mb-10">
-        Añade Pacientes y {''}
+        Add patients and {''}
         <span className="text-indigo-400 font-bold">
-          Adminístralos
+          Manage them
         </span>
       </p>
 
@@ -92,43 +92,43 @@ const Formulario = ({ pacientes, setPacientes, paciente, setPaciente }) => { //d
 
 
         <div className='mb-5'>
-          <label htmlFor='mascota' className='block text-gray-700 uppercase font-bold'>Nombre Mascota</label>
+          <label htmlFor='mascota' className='block text-gray-700 uppercase font-bold'>Pet name</label>
           <input
             id='mascota'
             type="text"
             className="border-2 w-full p-2 mt-2 rounded-md placeholder-gray-400"
-            placeholder='Nombre de la mascota'
+            placeholder='Pet name'
             value={nombre}
             onChange={(e) => setNombre(e.target.value)}
           />
         </div>
 
         <div className='mb-5'>
-          <label htmlFor='propietario' className='block text-gray-700 uppercase font-bold mt-5'>Nombre Propietario</label>
+          <label htmlFor='propietario' className='block text-gray-700 uppercase font-bold mt-5'>Owner name</label>
           <input
             id='propietario'
             type="text"
             className="border-2 w-full p-2 mt-2 rounded-md placeholder-gray-400"
-            placeholder='Nombre del propietario'
+            placeholder='Owner name'
             value={propietario}
             onChange={(e) => setPropietario(e.target.value)}
           />
         </div>
 
         <div className='mb-5'>
-          <label htmlFor='email' className='block text-gray-700 uppercase font-bold mt-5'>Email Propietario</label>
+          <label htmlFor='email' className='block text-gray-700 uppercase font-bold mt-5'>Owner Email</label>
           <input
             id='email'
             type="email"
             className="border-2 w-full p-2 mt-2 rounded-md placeholder-gray-400"
-            placeholder='Email contacto propietario'
+            placeholder='Owner Email'
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
 
         <div className='mb-5'>
-          <label htmlFor='alta' className='block text-gray-700 uppercase font-bold mt-5'>Alta mascota</label>
+          <label htmlFor='alta' className='block text-gray-700 uppercase font-bold mt-5'>Pet discharge date</label>
           <input
             id='alta'
             type="date"
@@ -139,11 +139,11 @@ const Formulario = ({ pacientes, setPacientes, paciente, setPaciente }) => { //d
         </div>
 
         <div className='mb-5'>
-          <label htmlFor='sintomas' className='block text-gray-700 uppercase font-bold mt-5'>Síntomas</label>
+          <label htmlFor='sintomas' className='block text-gray-700 uppercase font-bold mt-5'>Symptoms</label>
           <textarea
             id="sintomas"
             className="border-2 w-full p-2 mt-2 rounded-md placeholder-gray-400 mb-5"
-            placeholder='Describe los síntomas'
+            placeholder='Describe the sympstoms'
             value={sintomas}
             onChange={(e) => setSintomas(e.target.value)}
           />
@@ -153,9 +153,9 @@ const Formulario = ({ pacientes, setPacientes, paciente, setPaciente }) => { //d
           type="submit"
           className="bg-indigo-400 w-full p-3 rounded-md hover:bg-indigo-500 
           cursor-pointer text-white uppercase font-bold transition-colors"
-          value={paciente.id ? 'Editar paciente' : 'Agregar paciente'} />
+          value={paciente.id ? 'Edit patient' : 'Add patient'} />
 
-        {error && <Error mensaje='¡Todos los campos son obligatorios!' />}
+        {error && <Error mensaje='Please fill all the fields' />}
 
       </form>
 

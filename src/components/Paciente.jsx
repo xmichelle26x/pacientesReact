@@ -3,7 +3,7 @@ const Paciente = ({ paciente, setPaciente, eliminarPaciente }) => {
   const { nombre, propietario, email, fecha, sintomas, id } = paciente
 
   const handleEliminar = () => {
-    const respuesta = confirm('¿Deseas eliminar este paciente?')
+    const respuesta = confirm('Are you sure you want to delete this patient?')
     if(respuesta){
       eliminarPaciente(id)
     }
@@ -12,11 +12,11 @@ const Paciente = ({ paciente, setPaciente, eliminarPaciente }) => {
 
   return (
     <div className="mx-5 my-5 bg-white shadow-md px-5 py-10 rounded-xl">
-      <p className="font-bold mb-3 text-gray-700 uppercase">Nombre: {''}
+      <p className="font-bold mb-3 text-gray-700 uppercase">Name: {''}
         <span className="font-normal normal-case">{nombre}</span>
       </p>
 
-      <p className="font-bold mb-3 text-gray-700 uppercase">Propietario: {''}
+      <p className="font-bold mb-3 text-gray-700 uppercase">Owner: {''}
         <span className="font-normal normal-case">{propietario}</span>
       </p>
 
@@ -24,11 +24,11 @@ const Paciente = ({ paciente, setPaciente, eliminarPaciente }) => {
         <span className="font-normal normal-case">{email}</span>
       </p>
 
-      <p className="font-bold mb-3 text-gray-700 uppercase">Fecha Alta: {''}
+      <p className="font-bold mb-3 text-gray-700 uppercase">Discharge date: {''}
         <span className="font-normal normal-case">{fecha}</span>
       </p>
 
-      <p className="font-bold mb-3 text-gray-700 uppercase">Síntomas: {''}
+      <p className="font-bold mb-3 text-gray-700 uppercase">Symptoms: {''}
         <span className="font-normal normal-case">{sintomas}</span>
       </p>
 
@@ -37,12 +37,12 @@ const Paciente = ({ paciente, setPaciente, eliminarPaciente }) => {
           type="button"
           className="py-2 px-10 bg-indigo-400 hover:bg-indigo-600 text-white font-bold rounded-lg uppercase"
           onClick={() => setPaciente(paciente)}
-        >Editar</button>
+        >Edit</button>
         <button
           type="button"
           className="py-2 px-10 bg-red-400 hover:bg-red-600 text-white font-bold rounded-lg uppercase"
           onClick={handleEliminar}>
-          Eliminar
+          Delete
         </button>
       </div>
 
